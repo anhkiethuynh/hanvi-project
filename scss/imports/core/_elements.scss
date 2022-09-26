@@ -1,0 +1,38 @@
+// css button, title, icon, elements...
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	display: block;
+	outline: 0;
+	&.--center {
+		margin: 0 auto;
+		display: block;
+	}
+}
+a {
+	text-decoration: none;
+	outline: 0;
+	color: var(--main-color);
+	&.--hover-link {
+		// @include transition($t);
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+}
+strong {
+	font-family: nb;
+}
+.--hidden {
+	display: none;
+}

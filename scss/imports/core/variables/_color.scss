@@ -1,0 +1,15 @@
+$color: (
+	"primary": #ffd738,
+	"body-text": #000,
+	"black": #000,
+	"white": #fff,
+);
+
+:root {
+	@each $key, $value in $color {
+		--#{$key}-color: #{$value};
+	}
+	@each $key, $value in $color {
+		--text-#{$key}: #{$value};
+	}
+}
