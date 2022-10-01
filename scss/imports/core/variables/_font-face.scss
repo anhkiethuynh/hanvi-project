@@ -1,0 +1,61 @@
+@font-face {
+	font-family: "Cardillac";
+	src: url("../fonts/Cardillac-Black.woff2") format("woff2"),
+		url("../fonts/Cardillac-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: fallback;
+}
+@font-face {
+	font-family: "os-medium";
+	src: url("../fonts/OpenSans-Medium.woff2") format("woff2"),
+		url("../fonts/OpenSans-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "os-bold";
+	src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+		url("../fonts/OpenSans-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "os-smbold";
+	src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"),
+		url("../fonts/OpenSans-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "os-ebold";
+	src: url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"),
+		url("../fonts/OpenSans-ExtraBold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "os-light";
+	src: url("../fonts/OpenSans-Light.woff2") format("woff2"),
+		url("../fonts/OpenSans-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "os-reg";
+	src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+		url("../fonts/OpenSans-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+}

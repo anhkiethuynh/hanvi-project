@@ -16,9 +16,11 @@ body {
 	width: 100%;
 	max-width: $container-max-width;
 	margin: auto;
-
-	background: #fff;
-	letter-spacing: -0.3px;
+	font-family: var(--ff-body);
+	font-size: var(--fs-body);
+	line-height: var(--lh-body);
+	background: var(--bg-white);
+	// letter-spacing: -0.3px;
 	@include customscroll();
 	overflow-x: hidden;
 	&.--no-scroll {

@@ -1,0 +1,85 @@
+.homepage {
+	.hero {
+		&-banner,
+		&-slider {
+			height: calc(100vh - var(--height-header));
+			width: 100%;
+			position: relative;
+			.btn-primary {
+				position: absolute;
+				bottom: 10%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		&-img {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+			picture,
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 0;
+				background-color: rgba(map-get($colors, "black"), 0.5);
+			}
+		}
+		&-text {
+			position: absolute;
+			top: 15%;
+			left: 50%;
+			transform: translateX(-50%);
+			.text-heading1 {
+				margin-bottom: 20px;
+			}
+			.text-subHeading {
+				line-height: 1.5;
+			}
+		}
+	}
+	.sc-geschichte {
+		padding: var(--padding-section) 0;
+		background-size: 100% 100%;
+		min-height: 900px;
+		.geschichte {
+			display: flex;
+			&-col {
+				padding: 0 40px;
+				text-align: center;
+			}
+			&-text {
+				margin-bottom: 50px;
+				text-align: center;
+			}
+		}
+	}
+	.sc-menu {
+		padding: var(--padding-section) 0;
+		.menu-list {
+			margin-top: var(--padding-section);
+		}
+	}
+	.scmap {
+		height: 700px;
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.scgallery {
+		padding-top: var(--padding-section);
+		.heading {
+			margin-bottom: var(--padding-section);
+		}
+	}
+}

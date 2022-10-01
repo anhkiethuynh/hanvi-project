@@ -50,7 +50,7 @@
 		cursor: pointer;
 		background-color: #ddd;
 		&.is-selected {
-			background: var(--main-color, #000);
+			background: var(--primary-color, #000);
 		}
 	}
 }
@@ -58,7 +58,7 @@
 .flickity-prev-next-button {
 	@include size(var(--height-button));
 	border-radius: 50%;
-	background: var(--main-color, #000);
+	background: var(--primary-color, #000);
 	border: 0;
 	background-image: url(../img/ic_arrow_black.svg);
 	background-repeat: no-repeat;

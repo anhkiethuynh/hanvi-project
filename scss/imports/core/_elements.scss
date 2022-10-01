@@ -22,12 +22,21 @@ img {
 a {
 	text-decoration: none;
 	outline: 0;
-	color: var(--main-color);
+	color: inherit;
 	&.--hover-link {
 		// @include transition($t);
 		&:hover {
 			opacity: 0.6;
 		}
+	}
+}
+.text-link {
+	color: var(--text-primary);
+	text-decoration: underline;
+}
+[class*="text"] {
+	&.text-center {
+		text-align: center;
 	}
 }
 strong {
@@ -36,3 +45,5 @@ strong {
 .--hidden {
 	display: none;
 }
+
+@import "./atoms/_buttons.";

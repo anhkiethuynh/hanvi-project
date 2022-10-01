@@ -1,3 +1,16 @@
 @import "./variables/_layout";
 @import "./variables/_color";
 @import "./variables/_fonts";
+@import "./_function";
+@for $i from 2 to 1000 {
+	%border-radius-#{$i} {
+		border-radius: #{$i}px;
+	}
+}
+
+:root {
+	--header-logo-width: 80px;
+	--transition: 0.4s;
+	--height-header: 80px;
+	--padding-section: 100px;
+}

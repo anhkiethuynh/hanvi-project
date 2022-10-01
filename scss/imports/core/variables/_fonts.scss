@@ -1,29 +1,34 @@
-@use "sass:math";
+@import "./_font-face.scss";
+
 $const_fsize: "fs";
 $const_ffamily: "ff";
 $const_flineHeight: "lh";
 $const_fWeight: "fw";
+
 /* ******************************************** */
 /* *                 Font Size                * */
 /* ******************************************** */
 $fontSizes: (
 	base: (
-		body: 14px,
-		heading1: 100px,
-		heading2: 60px,
-		subHeading: 50px,
+		body: 1.4rem,
+		heading1: 8rem,
+		heading2: 6rem,
+		heading3: 3rem,
+		heading4: 2rem,
+		heading5: 1.8rem,
+		subHeading: 3rem,
 	),
 	xl: (),
 	lg: (),
 	md: (
-		heading1: 60px,
-		subHeading: 25px,
+		// heading1: 60px,
+		// subHeading: 25px,,,,,,,,,,,,,,,,,,
 	),
 	sm: (
 		// heading1: 5px,
 	),
 	xs: (
-		heading1: 20px,
+		// heading1: 20px,
 	),
 );
 /* ******************************************** */
@@ -31,43 +36,45 @@ $fontSizes: (
 /* ******************************************** */
 $lineHeight: (
 	base: (
-		body: 14px,
-		heading1: 100px,
-		heading2: 60px,
-		subHeading: 50px,
+		body: 1.7,
+		heading1: 1.2,
+		heading2: 1.2,
+		subHeading: 1.2,
 	),
 	xl: (),
 	lg: (),
 	md: (
-		heading1: 60px,
-		subHeading: 25px,
+		// heading1: 60px,
+		// subHeading: 25px,,,,,,,,,,,,,,,
 	),
 	sm: (
 		// heading1: 5px,
 	),
 	xs: (
-		heading1: 20px,
+		// heading1: 20px,
 	),
 );
 /* ******************************************** */
 /* *      Font family from font converted     * */
 /* ******************************************** */
 $baseFamilies: (
-	fmain: "abc",
-	fbold: "bcd",
-	ftitalic: "def",
+	fmain: "os-reg",
+	fbold: "os-bold",
+	fsmbold: "os-smbold",
+	fcdl: "Cardillac",
+	subHeading: "os-smbold",
 );
 /* ******************************************** */
 /* *      Font family from Design System        * */
 /* ******************************************** */
 $documentFamilies: (
 	body: map-get($baseFamilies, "fmain"),
-	heading1: map-get($baseFamilies, "fmain"),
+	heading1: map-get($baseFamilies, "fcdl"),
 	heading2: map-get($baseFamilies, "fmain"),
-	subHeading: "...",
+	// subHeading: "...",
 );
 /* ******************************************** */
-/* *                 Font Size                * */
+/* *                 Font Family              * */
 /* ******************************************** */
 $fontFamilies: map-merge($baseFamilies, $documentFamilies);
 
@@ -111,6 +118,9 @@ $baseLineHeight: map-get(
 			}
 		}
 	}
+	@each $key, $value in $fontFamilies {
+		--#{$const_ffamily}-#{$key}: #{$value};
+	}
 }
 
 /* *********************************************************/
@@ -118,11 +128,11 @@ $baseLineHeight: map-get(
 /* *********************************************************/
 @each $key, $value in $baseFontSize {
 	.text-#{$key} {
-		// font-size: var(--#{$const_fsize}-#{$ckey});
-		line-height: var(--lh, 0);
+		$fsz: --#{$const_fsize}-#{$key};
+		$lh: --#{$const_flineHeight}-#{$key};
+		$ff: --#{$const_ffamily}-#{$key};
+		font-size: var(#{$fsz});
+		line-height: var(#{$lh}, 1);
+		font-family: var(#{$ff});
 	}
-}
-
-h1 {
-	font-size: var(--fs-heading1);
 }

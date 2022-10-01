@@ -1,0 +1,23 @@
+.btn {
+	& {
+		height: 60px;
+		padding: 0 70px;
+		font-family: var(--ff-fcdl);
+		font-size: var(--fs-heading3);
+		@extend %border-radius-999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: max-content;
+	}
+	&-center {
+		@include selfCenter;
+	}
+	@each $key, $value in $colors {
+		&-#{$key} {
+			background-color: #{$value};
+		}
+		&-text-#{$key} {
+		}
+	}
+}
