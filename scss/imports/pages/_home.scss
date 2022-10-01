@@ -46,11 +46,23 @@
 				line-height: 1.5;
 			}
 		}
+		@include media("<md") {
+			&-banner,
+			&-slider {
+				height: 600px;
+			}
+		}
 	}
 	.sc-geschichte {
 		padding: var(--padding-section) 0;
-		background-size: 100% 100%;
-		min-height: 900px;
+		background-size: cover;
+		background-position: center;
+		min-height: 700px;
+		position: relative;
+		// .container {
+		// 	position: relative;
+		// 	z-index: 1;
+		// }
 		.geschichte {
 			display: flex;
 			&-col {
@@ -61,6 +73,26 @@
 				margin-bottom: 50px;
 				text-align: center;
 			}
+		}
+		@include media("<md") {
+			.geschichte {
+				min-height: auto;
+				flex-direction: column;
+				&-col {
+					padding: 20px 40px;
+					text-align: center;
+				}
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(black, 0.2);
+			z-index: 0;
 		}
 	}
 	.sc-menu {
@@ -83,6 +115,16 @@
 		padding-top: var(--padding-section);
 		.heading {
 			margin-bottom: var(--padding-section);
+		}
+	}
+	.sc-restaurant {
+		padding: var(--padding-section) 0;
+		.restaurant-text {
+			text-align: center;
+			margin-bottom: 40px;
+			@include media("<md") {
+				margin-bottom: 20px;
+			}
 		}
 	}
 }

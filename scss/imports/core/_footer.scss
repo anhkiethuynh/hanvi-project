@@ -4,12 +4,18 @@
 		display: flex;
 		// flex-wrap: wrap;
 		justify-content: space-between;
+		@include media("<md") {
+			flex-direction: column;
+		}
 	}
 	&-column {
 		// width: 50%;
 		// display: flex;
 		// flex-direction: column;
 		// align-items: flex-end;
+		@include media("<md") {
+			margin-bottom: 20px;
+		}
 	}
 	&-heading {
 		font-family: var(--ff-fbold);
