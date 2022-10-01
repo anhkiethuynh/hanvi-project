@@ -1,5 +1,5 @@
 /node_modules
 .sass-cache/
-/dest/style.min.css
-/dest/style.min.css.map
-/dest/jsmain.min.js
+# /dest/style.min.css
+# /dest/style.min.css.map
+# /dest/jsmain.min.js
