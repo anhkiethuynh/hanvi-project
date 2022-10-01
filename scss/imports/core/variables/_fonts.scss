@@ -21,11 +21,19 @@ $fontSizes: (
 	xl: (),
 	lg: (),
 	md: (
-		// heading1: 60px,
-		// subHeading: 25px,,,,,,,,,,,,,,,,,,
+		body: 1.4rem,
+		heading1: 6rem,
+		heading2: 4rem,
+		heading3: 2rem,
+		heading5: 1.5rem,
+		subHeading: 2rem,
 	),
 	sm: (
 		// heading1: 5px,
+		heading1: 4rem,
+		heading2: 2rem,
+		heading3: 1.7rem,
+		subHeading: 1.6rem,
 	),
 	xs: (
 		// heading1: 20px,
@@ -45,7 +53,7 @@ $lineHeight: (
 	lg: (),
 	md: (
 		// heading1: 60px,
-		// subHeading: 25px,,,,,,,,,,,,,,,
+		// subHeading: 25px,,,,,,,,,,,,,,,,,,,,,,,,,,,
 	),
 	sm: (
 		// heading1: 5px,

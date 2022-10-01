@@ -8,7 +8,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-width: max-content;
+		width: max-content;
+		@include media("<md") {
+			height: 50px;
+			padding: 0 40px;
+		}
 	}
 	&-center {
 		@include selfCenter;

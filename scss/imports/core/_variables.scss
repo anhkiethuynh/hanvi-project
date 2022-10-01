@@ -13,4 +13,7 @@
 	--transition: 0.4s;
 	--height-header: 80px;
 	--padding-section: 100px;
+	@include media("<md") {
+		--padding-section: 60px;
+	}
 }

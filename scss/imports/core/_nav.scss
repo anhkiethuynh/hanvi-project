@@ -1,0 +1,62 @@
+.mobile-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--black-color);
+	z-index: 500;
+	opacity: 0;
+	pointer-events: none;
+	transition: all var(--transition);
+	&.show {
+		pointer-events: all;
+		opacity: 1;
+		transition: all var(--transition);
+	}
+	.inner {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+	}
+	.btn-close-nav {
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+		outline: 0;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		align-self: flex-end;
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+	}
+	.menu {
+		&-wrap {
+			// display: flex;
+			flex: 1;
+		}
+		&-link {
+			color: var(--text-white);
+			font-family: var(--ff-fcdl);
+			font-size: var(--fs-heading4);
+			display: block;
+			padding: 10px 0;
+			transition: all 0.4s;
+			&:hover {
+				color: var(--text-primary);
+				transition: all 0.4s;
+			}
+		}
+		@include media("<md") {
+			& {
+				display: none;
+			}
+		}
+	}
+}

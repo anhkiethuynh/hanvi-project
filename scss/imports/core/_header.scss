@@ -38,8 +38,24 @@
 				transition: all 0.4s;
 			}
 		}
+		@include media("<md") {
+			& {
+				display: none;
+			}
+		}
 	}
 	.hamburger {
-		display: none;
+		// display: none;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		background-color: transparent;
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+		@include media(">=md") {
+			display: none;
+		}
 	}
 }

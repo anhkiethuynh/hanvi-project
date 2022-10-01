@@ -19,12 +19,33 @@ $(document).ready(function () {
 	//     }
 	// }
 	// mobileDetect();
+	function cloneMenu() {
+		const currentMenu = $(".header .menu .menu-wrap");
+		if (currentMenu?.length > 0) {
+			const cloneMenu = currentMenu.clone();
+			const nav = $(".mobile-nav .inner");
 
+			nav.append(cloneMenu);
+		}
+	}
+	function menuMobile() {
+		const nav = $(".mobile-nav"),
+			btnMenu = $(".header .hamburger"),
+			btnClose = $(".mobile-nav .btn-close-nav");
+		btnMenu.on("click", function () {
+			nav.addClass("show");
+		});
+		btnClose.on("click", function () {
+			nav.removeClass("show");
+		});
+	}
 	function init() {
 		$("body")
 			.imagesLoaded()
 			.progress({ background: true }, function (instance, image) {})
 			.always(function (instance) {
+				cloneMenu();
+				menuMobile();
 				$(".loading").addClass("--hide");
 			})
 			.fail(function () {
