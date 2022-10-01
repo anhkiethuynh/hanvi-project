@@ -19,41 +19,17 @@ $grid-breakpoints-min: (
 
 $grid-breakpoints: (
 	// Extra large screen / wide desktop
-	xxl:
-		map-get(
-			$map: $grid-breakpoints-min,
-			$key: "xxl",
-		) - 1,
+	xxl: map-get($grid-breakpoints-min, "xxl") - 1,
 	// Extra large screen / wide desktop
-	xl:
-		map-get(
-			$map: $grid-breakpoints-min,
-			$key: "xl",
-		) - 1,
+	xl: map-get($grid-breakpoints-min, "xl") - 1,
 	// Large screen / desktop
-	lg:
-		map-get(
-			$map: $grid-breakpoints-min,
-			$key: "lg",
-		) - 1,
+	lg: map-get($grid-breakpoints-min, "lg") - 1,
 	// Medium screen / tablet
-	md:
-		map-get(
-			$map: $grid-breakpoints-min,
-			$key: "md",
-		) - 1,
+	md: map-get($grid-breakpoints-min, "md") - 1,
 	// Small screen / phone
-	sm:
-		map-get(
-			$map: $grid-breakpoints-min,
-			$key: "sm",
-		) - 1,
+	sm: map-get($grid-breakpoints-min, "sm") - 1,
 	// Extra small screen / phone
-	xs:
-		map-get(
-			$map: $grid-breakpoints-min,
-			$key: "xs",
-		) - 1
+	xs: map-get($grid-breakpoints-min, "xs") - 1
 );
 
 $container-max-widths: (
@@ -68,12 +44,12 @@ $container-max-widths: (
 :root {
 	@each $key, $value in $grid-breakpoints {
 		@media (max-width: #{$value}) {
-			--container-width: #{map-get($map: $container-max-widths, $key: #{$key})};
+			--container-width: #{map-get($container-max-widths, #{$key})};
 		}
 	}
 	@media (max-width: $container-max-width) {
 		--screen-width: #{$container-max-width};
 	}
 	--gap: 15px;
-	--container-width: #{map-get($map: $container-max-widths, $key: "xxl")};
+	--container-width: #{map-get($container-max-widths, "xxl")};
 }

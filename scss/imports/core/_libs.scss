@@ -65,7 +65,8 @@
 	background-position: center;
 	position: absolute;
 	top: 50%;
-	@include transform(translateY(-50%));
+	// @include transform(translateY(-50%));
+	transform: translateY(-50%);
 	right: calc(var(--height-button) / 2 * -1);
 	cursor: pointer;
 	svg {
@@ -74,7 +75,8 @@
 	&.previous {
 		left: calc(var(--height-button) / 2 * -1);
 		right: initial;
-		@include transform(rotate(180deg));
+		// @include transform(rotate(180deg));
+		transform: rotate(180deg);
 	}
 }
 /* flickity-fade */

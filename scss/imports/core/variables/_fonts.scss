@@ -97,7 +97,7 @@ $baseLineHeight: map-get(
 		@if ($key != "base") {
 			@media (max-width: map-get($map: $grid-breakpoints, $key: #{$key})) {
 				@each $ckey, $cvalue in $value {
-					--#{$const_fsize - $ckey}: #{$cvalue};
+					--#{$const_fsize}-#{$ckey}: #{$cvalue};
 				}
 			}
 		}
@@ -106,7 +106,7 @@ $baseLineHeight: map-get(
 		@if ($key != "base") {
 			@media (max-width: map-get($map: $grid-breakpoints, $key: #{$key})) {
 				@each $ckey, $cvalue in $value {
-					--#{$const_flineHeight - $ckey}: #{$cvalue};
+					--#{$const_flineHeight}-#{$ckey}: #{$cvalue};
 				}
 			}
 		}
