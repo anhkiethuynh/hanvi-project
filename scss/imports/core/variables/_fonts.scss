@@ -9,78 +9,79 @@ $const_fWeight: "fw";
 /* *                 Font Size                * */
 /* ******************************************** */
 $fontSizes: (
-	base: (
-		body: 1.4rem,
-		heading1: 8rem,
-		heading2: 6rem,
-		heading3: 3rem,
-		heading4: 2rem,
-		heading5: 1.8rem,
-		heading6: 1.6rem,
-		subHeading: 3rem,
-	),
-	xl: (),
-	lg: (),
-	md: (
-		body: 1.4rem,
-		heading1: 6rem,
-		heading2: 4rem,
-		heading3: 2rem,
-		heading5: 1.5rem,
-		subHeading: 2rem,
-	),
-	sm: (
-		// heading1: 5px,
-		heading1: 4rem,
-		heading2: 2rem,
-		heading3: 1.7rem,
-		subHeading: 1.6rem,
-	),
-	xs: (
-		// heading1: 20px,
-	),
+  base: (
+    body: 1.4rem,
+    heading1: 8rem,
+    heading2: 6rem,
+    heading3: 3rem,
+    heading4: 2rem,
+    heading5: 1.8rem,
+    heading6: 1.6rem,
+    subHeading: 3rem,
+    f45: 4.5rem,
+  ),
+  xl: (),
+  lg: (),
+  md: (
+    body: 1.4rem,
+    heading1: 6rem,
+    heading2: 4rem,
+    heading3: 2rem,
+    heading5: 1.5rem,
+    subHeading: 2rem,
+  ),
+  sm: (
+    // heading1: 5px,
+    heading1: 4rem,
+    heading2: 2rem,
+    heading3: 1.7rem,
+    subHeading: 1.6rem,
+  ),
+  xs: (
+    // heading1: 20px,
+  ),
 );
 /* ******************************************** */
 /* *                 Line Height                * */
 /* ******************************************** */
 $lineHeight: (
-	base: (
-		body: 1.7,
-		heading1: 1.2,
-		heading2: 1.2,
-		subHeading: 1.2,
-	),
-	xl: (),
-	lg: (),
-	md: (
-		// heading1: 60px,
-		// subHeading: 25px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-	),
-	sm: (
-		// heading1: 5px,
-	),
-	xs: (
-		// heading1: 20px,
-	),
+  base: (
+    body: 1.7,
+    heading1: 1.2,
+    heading2: 1.2,
+    subHeading: 1.2,
+  ),
+  xl: (),
+  lg: (),
+  md: (
+    // heading1: 60px,
+    // subHeading: 25px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  ),
+  sm: (
+    // heading1: 5px,
+  ),
+  xs: (
+    // heading1: 20px,
+  ),
 );
 /* ******************************************** */
 /* *      Font family from font converted     * */
 /* ******************************************** */
 $baseFamilies: (
-	fmain: "os-reg",
-	fbold: "os-bold",
-	fsmbold: "os-smbold",
-	fcdl: "Cardillac",
-	subHeading: "os-smbold",
+  fmain: "os-reg",
+  fbold: "os-bold",
+  fsmbold: "os-smbold",
+  fcdl: "Cardillac",
+  subHeading: "os-smbold",
 );
 /* ******************************************** */
 /* *      Font family from Design System        * */
 /* ******************************************** */
 $documentFamilies: (
-	body: map-get($baseFamilies, "fmain"),
-	heading1: map-get($baseFamilies, "fcdl"),
-	heading2: map-get($baseFamilies, "fmain"),
-	// subHeading: "...",
+  body: map-get($baseFamilies, "fmain"),
+  heading1: map-get($baseFamilies, "fcdl"),
+  heading2: map-get($baseFamilies, "fmain"),
+  // subHeading: "...",
 );
 /* ******************************************** */
 /* *                 Font Family              * */
@@ -91,57 +92,57 @@ $fontFamilies: map-merge($baseFamilies, $documentFamilies);
 /* * Get base font size in font size to generate default css variable* */
 /* **********************************************************************/
 $baseFontSize: map-get(
-	$map: $fontSizes,
-	$key: "base",
+  $map: $fontSizes,
+  $key: "base",
 );
 $baseLineHeight: map-get(
-	$map: $lineHeight,
-	$key: "base",
+  $map: $lineHeight,
+  $key: "base",
 );
 :root {
-	@each $key, $value in $baseFontSize {
-		--#{$const_fsize}-#{$key}: #{$value};
-	}
-	@each $key, $value in $baseLineHeight {
-		--#{$const_flineHeight}-#{$key}: #{$value};
-	}
-	// @each $key, $value in $baseFontSize {
-	// 	--#{$const_flineHeight}-#{$key}: #{$value};
-	// }
-	// @generatevariables ($fontSizes);
-	@each $key, $value in $fontSizes {
-		@if ($key != "base") {
-			@media (max-width: map-get($map: $grid-breakpoints, $key: #{$key})) {
-				@each $ckey, $cvalue in $value {
-					--#{$const_fsize}-#{$ckey}: #{$cvalue};
-				}
-			}
-		}
-	}
-	@each $key, $value in $lineHeight {
-		@if ($key != "base") {
-			@media (max-width: map-get($map: $grid-breakpoints, $key: #{$key})) {
-				@each $ckey, $cvalue in $value {
-					--#{$const_flineHeight}-#{$ckey}: #{$cvalue};
-				}
-			}
-		}
-	}
-	@each $key, $value in $fontFamilies {
-		--#{$const_ffamily}-#{$key}: #{$value};
-	}
+  @each $key, $value in $baseFontSize {
+    --#{$const_fsize}-#{$key}: #{$value};
+  }
+  @each $key, $value in $baseLineHeight {
+    --#{$const_flineHeight}-#{$key}: #{$value};
+  }
+  // @each $key, $value in $baseFontSize {
+  // 	--#{$const_flineHeight}-#{$key}: #{$value};
+  // }
+  // @generatevariables ($fontSizes);
+  @each $key, $value in $fontSizes {
+    @if ($key != "base") {
+      @media (max-width: map-get($map: $grid-breakpoints, $key: #{$key})) {
+        @each $ckey, $cvalue in $value {
+          --#{$const_fsize}-#{$ckey}: #{$cvalue};
+        }
+      }
+    }
+  }
+  @each $key, $value in $lineHeight {
+    @if ($key != "base") {
+      @media (max-width: map-get($map: $grid-breakpoints, $key: #{$key})) {
+        @each $ckey, $cvalue in $value {
+          --#{$const_flineHeight}-#{$ckey}: #{$cvalue};
+        }
+      }
+    }
+  }
+  @each $key, $value in $fontFamilies {
+    --#{$const_ffamily}-#{$key}: #{$value};
+  }
 }
 
 /* *********************************************************/
 /* *                   Generating text class               * */
 /* *********************************************************/
 @each $key, $value in $baseFontSize {
-	.text-#{$key} {
-		$fsz: --#{$const_fsize}-#{$key};
-		$lh: --#{$const_flineHeight}-#{$key};
-		$ff: --#{$const_ffamily}-#{$key};
-		font-size: var(#{$fsz});
-		line-height: var(#{$lh}, 1);
-		font-family: var(#{$ff});
-	}
+  .text-#{$key} {
+    $fsz: --#{$const_fsize}-#{$key};
+    $lh: --#{$const_flineHeight}-#{$key};
+    $ff: --#{$const_ffamily}-#{$key};
+    font-size: var(#{$fsz});
+    line-height: var(#{$lh}, 1);
+    font-family: var(#{$ff});
+  }
 }

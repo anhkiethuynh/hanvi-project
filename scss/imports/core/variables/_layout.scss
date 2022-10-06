@@ -1,55 +1,60 @@
 /*BOXED LAYOUT*/
-$container-max-width: 2600px;
+$container-max-width: 2550px;
 $container-fluid-max-width: 2500px;
 
 $grid-breakpoints-min: (
-	// Extra small screen / phone
-	xs: 400px,
-	// Small screen / phone
-	sm: 576px,
-	// Medium screen / tablet
-	md: 768px,
-	// Large screen / desktop
-	lg: 992px,
-	// Extra large screen / wide desktop
-	xl: 1200px,
-	// Extra large screen / wide desktop
-	xxl: 1400px
+  // Extra small screen / phone
+  xs: 400px,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+  // Extra large screen / wide desktop
+  xxl: 1400px
 );
 
 $grid-breakpoints: (
-	// Extra large screen / wide desktop
-	xxl: map-get($grid-breakpoints-min, "xxl") - 1,
-	// Extra large screen / wide desktop
-	xl: map-get($grid-breakpoints-min, "xl") - 1,
-	// Large screen / desktop
-	lg: map-get($grid-breakpoints-min, "lg") - 1,
-	// Medium screen / tablet
-	md: map-get($grid-breakpoints-min, "md") - 1,
-	// Small screen / phone
-	sm: map-get($grid-breakpoints-min, "sm") - 1,
-	// Extra small screen / phone
-	xs: map-get($grid-breakpoints-min, "xs") - 1
+  // Extra large screen / wide desktop
+  xxl: map-get($grid-breakpoints-min, "xxl") - 1,
+  // Extra large screen / wide desktop
+  xl: map-get($grid-breakpoints-min, "xl") - 1,
+  // Large screen / desktop
+  lg: map-get($grid-breakpoints-min, "lg") - 1,
+  // Medium screen / tablet
+  md: map-get($grid-breakpoints-min, "md") - 1,
+  // Small screen / phone
+  sm: map-get($grid-breakpoints-min, "sm") - 1,
+  // Extra small screen / phone
+  xs: map-get($grid-breakpoints-min, "xs") - 1
 );
 
 $container-max-widths: (
-	xs: 100%,
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1140px,
-	xxl: 1440px,
+  xs: 100%,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1440px,
 );
 
 :root {
-	@each $key, $value in $grid-breakpoints {
-		@media (max-width: #{$value}) {
-			--container-width: #{map-get($container-max-widths, #{$key})};
-		}
-	}
-	@media (max-width: $container-max-width) {
-		--screen-width: #{$container-max-width};
-	}
-	--gap: 15px;
-	--container-width: #{map-get($container-max-widths, "xxl")};
+  @each $key, $value in $grid-breakpoints {
+    @media (max-width: #{$value}) {
+      --container-width: #{map-get($container-max-widths, #{$key})};
+    }
+  }
+  --screen-width: 100vw;
+  @media (min-width: $container-max-width) {
+    --screen-width: #{$container-max-width};
+  }
+  --gap: 15px;
+  --container-width: #{map-get($container-max-widths, "xxl")};
+
+  --halfPadding: calc(
+    (var(--screen-width) - var(--container-width)) / 2 + var(--gap)
+  );
 }

@@ -1,49 +1,50 @@
 // css button, title, icon, elements...
 sup {
-	vertical-align: super;
-	font-size: smaller;
+  vertical-align: super;
+  font-size: smaller;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
-	display: block;
-	outline: 0;
-	&.--center {
-		margin: 0 auto;
-		display: block;
-	}
+  max-width: 100%;
+  height: auto;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: block;
+  outline: 0;
+  &.--center {
+    margin: 0 auto;
+    display: block;
+  }
 }
 a {
-	text-decoration: none;
-	outline: 0;
-	color: inherit;
-	&.--hover-link {
-		// @include transition($t);
-		&:hover {
-			opacity: 0.6;
-		}
-	}
+  text-decoration: none;
+  outline: 0;
+  color: inherit;
+  &.--hover-link {
+    // @include transition($t);
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 .text-link {
-	color: var(--text-primary);
-	text-decoration: underline;
+  color: var(--text-primary);
+  text-decoration: underline;
 }
 [class*="text"] {
-	&.text-center {
-		text-align: center;
-	}
+  //   color: red;
+  &.text-center {
+    text-align: center;
+  }
 }
 strong {
-	font-family: nb;
+  font-family: nb;
 }
 .--hidden {
-	display: none;
+  display: none;
 }
 
 @import "./atoms/_buttons.";

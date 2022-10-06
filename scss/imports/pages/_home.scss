@@ -1,130 +1,307 @@
 .homepage {
-	.hero {
-		&-banner,
-		&-slider {
-			height: calc(100vh - var(--height-header));
-			width: 100%;
-			position: relative;
-			.btn-primary {
-				position: absolute;
-				bottom: 10%;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-		}
-		&-img {
-			width: 100%;
-			height: 100%;
-			position: relative;
-			overflow: hidden;
-			picture,
-			img {
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-			}
-			&::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				z-index: 0;
-				background-color: rgba(map-get($colors, "black"), 0.5);
-			}
-		}
-		&-text {
-			position: absolute;
-			top: 15%;
-			left: 50%;
-			transform: translateX(-50%);
-			.text-heading1 {
-				margin-bottom: 20px;
-			}
-			.text-subHeading {
-				line-height: 1.5;
-			}
-		}
-		@include media("<md") {
-			&-banner,
-			&-slider {
-				height: 600px;
-			}
-		}
-	}
-	.sc-geschichte {
-		padding: var(--padding-section) 0;
-		background-size: cover;
-		background-position: center;
-		min-height: 700px;
-		position: relative;
-		// .container {
-		// 	position: relative;
-		// 	z-index: 1;
-		// }
-		.geschichte {
-			display: flex;
-			&-col {
-				padding: 0 40px;
-				text-align: center;
-			}
-			&-text {
-				margin-bottom: 50px;
-				text-align: center;
-			}
-		}
-		@include media("<md") {
-			.geschichte {
-				min-height: auto;
-				flex-direction: column;
-				&-col {
-					padding: 20px 40px;
-					text-align: center;
-				}
-			}
-		}
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-color: rgba(black, 0.2);
-			z-index: 0;
-		}
-	}
-	.sc-menu {
-		padding: var(--padding-section) 0;
-		.menu-list {
-			margin-top: var(--padding-section);
-		}
-	}
-	.scmap {
-		height: 700px;
-		iframe {
-			width: 100%;
-			height: 100%;
-		}
-		@include media("<md") {
-			height: 400px;
-		}
-	}
-	.scgallery {
-		padding-top: var(--padding-section);
-		.heading {
-			margin-bottom: var(--padding-section);
-		}
-	}
-	.sc-restaurant {
-		padding: var(--padding-section) 0;
-		.restaurant-text {
-			text-align: center;
-			margin-bottom: 40px;
-			@include media("<md") {
-				margin-bottom: 20px;
-			}
-		}
-	}
+  .hero {
+    &-banner,
+    &-slider {
+      height: calc(100vh - var(--height-header));
+      width: 100%;
+      position: relative;
+      .btn-primary {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      picture,
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background-color: rgba(map-get($colors, "black"), 0.5);
+      }
+    }
+    &-text {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      .text-heading1 {
+        margin-bottom: 20px;
+      }
+      .text-subHeading {
+        line-height: 1.5;
+      }
+    }
+    @include media("<md") {
+      &-banner,
+      &-slider {
+        height: 600px;
+      }
+    }
+  }
+  .sc-geschichte {
+    padding: var(--padding-section) 0;
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+    position: relative;
+    // .container {
+    // 	position: relative;
+    // 	z-index: 1;
+    // }
+    .geschichte {
+      display: flex;
+      &-col {
+        padding: 0 40px;
+        text-align: center;
+      }
+      &-text {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+    }
+    @include media("<md") {
+      .geschichte {
+        min-height: auto;
+        flex-direction: column;
+        &-col {
+          padding: 20px 40px;
+          text-align: center;
+        }
+      }
+    }
+    @include media("<sm") {
+      .geschichte {
+        &-col {
+          padding: 15px 0px;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(black, 0.2);
+      z-index: 0;
+    }
+  }
+  .sc-menu {
+    padding: var(--padding-section) 0;
+    .menu-list {
+      margin-top: var(--padding-section);
+    }
+  }
+  .scmap {
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 800px;
+      @include media("<md") {
+        min-height: 600px;
+      }
+    }
+    &-text {
+      padding: 50px 40px;
+      background-color: var(--primary-color);
+      position: relative;
+      z-index: 2;
+      @include media("<md") {
+        width: 100%;
+      }
+      @include media(">=md") {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5%;
+      }
+    }
+    .inner {
+      display: flex;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        pointer-events: none;
+      }
+      .text-heading1 {
+        font-family: var(--ff-fcdl);
+        font-size: var(--fs-f45);
+      }
+      .text-body {
+        margin-top: 30px;
+        font-size: var(--fs-heading5);
+        font-family: var(--ff-fsmbold);
+      }
+      flex-wrap: wrap;
+    }
+    &-col {
+      & {
+        // height: 100%;
+      }
+      &:first-child {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &:last-child {
+        flex: 2;
+      }
+    }
+
+    @include media("<md") {
+      &-col {
+        flex-wrap: wrap;
+        &:first-child {
+          flex: 1;
+          padding-right: 0;
+          margin-bottom: 20px;
+        }
+        &:last-child {
+          flex: 1;
+          iframe {
+            height: 500px;
+          }
+        }
+      }
+    }
+    @include media("<sm") {
+      &-col {
+        &:first-child,
+        &:last-child {
+          flex: 0 0 100%;
+          iframe {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .scgallery {
+    padding-top: var(--padding-section);
+    .heading {
+      margin-bottom: var(--padding-section);
+    }
+  }
+  .sc-restaurant {
+    padding: var(--padding-section) 0;
+    .restaurant-text {
+      text-align: center;
+      margin-bottom: 40px;
+      @include media("<md") {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .contact-us {
+    padding: var(--padding-section) 0;
+    &-headline {
+      .text-heading2 {
+        font-family: var(--ff-fcdl);
+        // font-size: var(--fs-body);
+      }
+    }
+    .form {
+      margin: 40px 0;
+      display: flex;
+      input {
+        border: transparent;
+        outline: none;
+        @extend %border-radius-999;
+        padding: 20px;
+        width: 100%;
+        font-family: var(--ff-body);
+        font-size: var(--fs-body);
+        @include media("<md") {
+          padding: 15px;
+        }
+      }
+      &-inputs {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        @include media("<md") {
+          flex-direction: column;
+          padding: 0 30px;
+        }
+      }
+      .input {
+        &-group {
+          flex: 2;
+          .label {
+            &-hidden {
+              display: none;
+            }
+          }
+          &:not(:last-child) {
+            margin-right: 20px;
+            @include media("<lg") {
+              margin: 0 20px 15px 0;
+            }
+            @include media("<md") {
+              margin: 0 0px 15px 0;
+            }
+          }
+          @include media(">=md", "<lg") {
+            flex: 0 0 calc(50% - 20px);
+          }
+        }
+      }
+      &-submit {
+        margin-left: 30px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--black-color);
+        color: var(--primary-color);
+        flex: 1;
+        font-family: var(--ff-fbold);
+        text-transform: uppercase;
+        font-size: var(--fs-heading5);
+        @extend %border-radius-999;
+        transition: all 0.4s;
+        cursor: pointer;
+        &:hover {
+          color: var(--black-color);
+          background-color: var(--primary-color);
+          transition: all 0.4s;
+        }
+        @include media("<lg") {
+          margin: 0 0 0px 0;
+          padding: 15px 20px;
+        }
+      }
+    }
+    &-info {
+      .phone-numer {
+        font-family: var(--ff-fbold);
+      }
+    }
+  }
 }
