@@ -55,7 +55,7 @@ $lineHeight: (
   lg: (),
   md: (
     // heading1: 60px,
-    // subHeading: 25px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // subHeading: 25px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
   ),
   sm: (
     // heading1: 5px,
@@ -99,6 +99,7 @@ $baseLineHeight: map-get(
   $map: $lineHeight,
   $key: "base",
 );
+
 :root {
   @each $key, $value in $baseFontSize {
     --#{$const_fsize}-#{$key}: #{$value};
@@ -143,6 +144,8 @@ $baseLineHeight: map-get(
     $ff: --#{$const_ffamily}-#{$key};
     font-size: var(#{$fsz});
     line-height: var(#{$lh}, 1);
-    font-family: var(#{$ff});
+    * {
+      font-family: var(#{$ff});
+    }
   }
 }

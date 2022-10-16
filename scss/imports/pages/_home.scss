@@ -94,12 +94,16 @@
     &::before {
       content: "";
       position: absolute;
+      pointer-events: none;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       background-color: rgba(black, 0.2);
       z-index: 0;
+    }
+    @include media(">=md") {
+      padding: calc(var(--padding-section) + 120px) 0 var(--padding-section) 0;
     }
   }
   .sc-menu {
@@ -110,14 +114,19 @@
   }
   .scmap {
     position: relative;
-
+    height: 800px;
+    @include media("<md") {
+      height: 600px;
+    }
     iframe {
       width: 100%;
       height: 100%;
-      min-height: 800px;
-      @include media("<md") {
-        min-height: 600px;
-      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
     }
     &-text {
       padding: 50px 40px;
@@ -137,6 +146,7 @@
     .inner {
       display: flex;
       position: relative;
+      height: 100%;
       &::before {
         position: absolute;
         content: "";
@@ -146,6 +156,7 @@
         bottom: 0;
         background-color: rgba($color: #000000, $alpha: 0.2);
         pointer-events: none;
+        z-index: 1;
       }
       .text-heading1 {
         font-family: var(--ff-fcdl);
@@ -219,11 +230,14 @@
   }
 
   .contact-us {
-    padding: var(--padding-section) 0;
+    z-index: 2;
+    padding: 0;
+    .container {
+      position: relative;
+    }
     &-headline {
       .text-heading2 {
         font-family: var(--ff-fcdl);
-        // font-size: var(--fs-body);
       }
     }
     .form {
@@ -301,6 +315,18 @@
     &-info {
       .phone-numer {
         font-family: var(--ff-fbold);
+      }
+    }
+    .inner {
+      @include media(">=md") {
+        // height: 250px;
+        width: 100%;
+        padding: 30px 40px;
+        background-color: var(--primary-color);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 0;
+        left: 50%;
       }
     }
   }

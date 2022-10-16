@@ -1,71 +1,74 @@
 @-ms-viewport {
-	width: device-width;
+  width: device-width;
 }
 * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased;
-	-webkit-text-rendering: optimizeSpeed;
-	text-rendering: optimizeSpeed;
-	box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  box-sizing: border-box;
 }
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
+  &.hanvi-hopot {
+    margin: 0 !important;
+  }
 }
 body {
-	width: 100%;
-	max-width: $container-max-width;
-	margin: auto;
-	font-family: var(--ff-body);
-	font-size: var(--fs-body);
-	line-height: var(--lh-body);
-	background: var(--bg-white);
-	@include customscroll();
-	overflow-x: hidden;
-	&.--no-scroll {
-		height: 100vh;
-		overflow: hidden;
-	}
+  width: 100%;
+  max-width: $container-max-width;
+  margin: auto;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  background: var(--bg-white);
+  @include customscroll();
+  overflow-x: hidden;
+  &.--no-scroll {
+    height: 100vh;
+    overflow: hidden;
+  }
 
-	.main {
-		width: 100%;
-		margin: auto;
-		@include visible;
-		position: relative;
-		z-index: 50;
-		// overflow-x: hidden;
-	}
-	section {
-		position: relative;
-		will-change: transform;
-	}
+  .main {
+    width: 100%;
+    margin: auto;
+    @include visible;
+    position: relative;
+    z-index: 50;
+    // overflow-x: hidden;
+  }
+  section {
+    position: relative;
+    will-change: transform;
+  }
 
-	.container {
-		width: 100%;
-		max-width: var(--container-width);
-		padding-right: var(--gap);
-		padding-left: var(--gap);
-		margin-right: auto;
-		margin-left: auto;
-		position: relative;
-		z-index: 9;
-	}
-	.container-fluid {
-		width: 100%;
-		max-width: $container-fluid-max-width;
-		padding-right: 50px;
-		padding-left: 50px;
-		margin-right: auto;
-		margin-left: auto;
-		position: relative;
-	}
+  .container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding-right: var(--gap);
+    padding-left: var(--gap);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 9;
+  }
+  .container-fluid {
+    width: 100%;
+    max-width: $container-fluid-max-width;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
 
-	.half-pd {
-		&.--hpd-right {
-			padding-right: var(--halfPadding);
-		}
-		&.--hpd-left {
-			padding-left: var(--halfPadding);
-		}
-	}
+  .half-pd {
+    &.--hpd-right {
+      padding-right: var(--halfPadding);
+    }
+    &.--hpd-left {
+      padding-left: var(--halfPadding);
+    }
+  }
 }

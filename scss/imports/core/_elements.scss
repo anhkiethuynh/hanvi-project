@@ -30,7 +30,7 @@ a {
     }
   }
 }
-.text-link {
+.text-link {  
   color: var(--text-primary);
   text-decoration: underline;
 }
@@ -47,4 +47,4 @@ strong {
   display: none;
 }
 
-@import "./atoms/_buttons.";
+@import "./atoms/_buttons";

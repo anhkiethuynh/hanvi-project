@@ -1,0 +1,126 @@
+.contentdetail {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--ff-fbold);
+    display: block;
+  }
+
+  h1 {
+    font-size: var(--fs-heading1);
+    line-height: var(--lh-heading1);
+    margin: 0 0 0.67rem 0;
+  }
+
+  h2 {
+    font-size: var(--fs-heading2);
+    line-height: var(--lh-heading2);
+    margin: 0 0 2rem 0;
+  }
+
+  h3 {
+    font-size: var(--fs-heading3);
+    line-height: var(--lh-heading3);
+    margin: 0 0 0.83rem 0;
+  }
+
+  h4 {
+    font-size: var(--fs-heading4);
+    line-height: var(--lh---fs-heading4);
+    margin: 0 0 1.12rem 0;
+  }
+
+  h5 {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  h6 {
+    font-size: 1.8rem;
+    margin: 0 0 1.67rem 0;
+  }
+
+  p {
+    margin: 0 0 2.12rem 0;
+  }
+
+  a {
+    color: var(--main-cl);
+  }
+
+  ol,
+  ul {
+    list-style: initial;
+    padding-left: 40px;
+
+    li {
+      padding: 5px 0;
+    }
+  }
+  strong {
+    font-family: var(--ff-fbold);
+  }
+  img {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    margin: 45px auto;
+  }
+  [class^="text-heading"] {
+    strong {
+      font-family: var(--ff-fcdl);
+    }
+  }
+  //   .thumbnail {
+  //     img {
+  //       margin-top: 0;
+  //     }
+  //   }
+
+  //   .img {
+  //     em {
+  //       margin: -35px auto 50px auto;
+  //       display: table;
+  //       text-align: center;
+  //       font-size: inherit;
+  //       line-height: inherit;
+  //       font-style: italic;
+  //     }
+  //   }
+
+  //   .video {
+  //     width: 100%;
+  //     height: 0;
+  //     padding-bottom: 56.25%;
+  //     position: relative;
+  //     margin: 25px auto;
+
+  //     iframe,
+  //     video {
+  //       position: absolute;
+  //       @include size(100%);
+  //       top: 0;
+  //       left: 0;
+  //     }
+  //   }
+
+  @include media("<md") {
+    img {
+      margin: 25px auto;
+    }
+    // .img {
+    //   em {
+    //     margin: -15px auto 25px auto;
+    //     display: table;
+    //     text-align: center;
+    //     font-size: inherit;
+    //     line-height: inherit;
+    //     font-style: italic;
+    //   }
+    // }
+  }
+}
