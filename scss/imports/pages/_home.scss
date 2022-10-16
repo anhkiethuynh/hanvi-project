@@ -133,6 +133,9 @@
       background-color: var(--primary-color);
       position: relative;
       z-index: 2;
+      p {
+        margin: 0;
+      }
       @include media("<md") {
         width: 100%;
       }
@@ -242,7 +245,41 @@
     }
     .form {
       margin: 40px 0;
-      display: flex;
+      form {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        @include media("<md") {
+          flex-direction: column;
+          padding: 0 30px;
+        }
+        .btn-primary {
+          width: 100%;
+          margin-left: 30px;
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--black-color);
+          color: var(--primary-color);
+          flex: 1;
+          font-family: var(--ff-fbold);
+          text-transform: uppercase;
+          font-size: var(--fs-heading5);
+          @extend %border-radius-999;
+          transition: all 0.4s;
+          cursor: pointer;
+          &:hover {
+            color: var(--black-color);
+            background-color: var(--primary-color);
+            transition: all 0.4s;
+          }
+          @include media("<lg") {
+            margin: 0 0 0px 0;
+            padding: 15px 20px;
+          }
+        }
+      }
       input {
         border: transparent;
         outline: none;
@@ -256,13 +293,6 @@
         }
       }
       &-inputs {
-        display: flex;
-        flex: 1;
-        flex-wrap: wrap;
-        @include media("<md") {
-          flex-direction: column;
-          padding: 0 30px;
-        }
       }
       .input {
         &-group {
@@ -286,38 +316,14 @@
           }
         }
       }
-      &-submit {
-        margin-left: 30px;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--black-color);
-        color: var(--primary-color);
-        flex: 1;
-        font-family: var(--ff-fbold);
-        text-transform: uppercase;
-        font-size: var(--fs-heading5);
-        @extend %border-radius-999;
-        transition: all 0.4s;
-        cursor: pointer;
-        &:hover {
-          color: var(--black-color);
-          background-color: var(--primary-color);
-          transition: all 0.4s;
-        }
-        @include media("<lg") {
-          margin: 0 0 0px 0;
-          padding: 15px 20px;
-        }
-      }
     }
     &-info {
       .phone-numer {
         font-family: var(--ff-fbold);
       }
     }
-    .inner {
+    .container {
+      padding: 20px 15px;
       @include media(">=md") {
         // height: 250px;
         width: 100%;
