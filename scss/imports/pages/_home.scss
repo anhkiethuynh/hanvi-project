@@ -259,6 +259,16 @@
         font-family: var(--ff-fcdl);
       }
     }
+    [class*="response-output"] {
+      background-color: #46b450;
+      color: #fff;
+      padding: 15px 30px;
+      @include media("<md") {
+        margin: 0 30px;
+        margin-top: 20px;
+        padding: 15px;
+      }
+    }
     .form {
       margin: 40px 0;
       .form-inputs {
@@ -266,7 +276,9 @@
           color: red;
           padding-left: 15px;
           padding-top: 10px;
+          display: block;
         }
+
         br {
           display: none;
         }
@@ -312,6 +324,19 @@
         width: 100%;
         font-family: var(--ff-body);
         font-size: var(--fs-body);
+        &[type="submit"] {
+          background-color: black;
+          color: #fff;
+          font-family: var(--ff-fbold);
+          cursor: pointer;
+          border: 1px solid black;
+          transition: all 0.4s;
+          &:hover {
+            background-color: var(--primary-color);
+            transition: all 0.4s;
+            color: black;
+          }
+        }
         @include media("<md") {
           padding: 15px;
         }

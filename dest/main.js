@@ -32,13 +32,29 @@ $(document).ready(function () {
     if (!actionsToScroll?.length) return;
     actionsToScroll.on("click", function (e) {
       if (!$(this).attr("href")) e.preventDefault();
-      console.log(
-        $(`[data-target-scroll=${$(this).attr("data-scroll-to")}]`)[0]
-      );
+
       const target = $(
         `[data-target-scroll=${$(this).attr("data-scroll-to")}]`
       )[0];
 
+      window?.scrollTo({
+        behavior: "smooth",
+        top: $(target).offset().top - 100,
+      });
+    });
+  }
+  function handleMenuScroll() {
+    const actionsToScroll = $("#menu-hanvi-menu li a");
+
+    if (!actionsToScroll?.length) return;
+    actionsToScroll.on("click", function (e) {
+      let str = $(this).attr("href");
+      if (str.startsWith("#")) {
+        str = str.replace("#", "");
+        e.preventDefault();
+      }
+      const target = $(`[data-target-scroll="${str}"]`)[0];
+      console.log(target, str);
       window?.scrollTo({
         behavior: "smooth",
         top: $(target).offset().top - 100,
@@ -102,6 +118,7 @@ $(document).ready(function () {
         handlePageScroll();
         handleHomeSlider();
         setupCardLabel();
+        handleMenuScroll();
 
         $(".loading").addClass("--hide");
       })
