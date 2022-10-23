@@ -55,7 +55,7 @@ $lineHeight: (
   lg: (),
   md: (
     // heading1: 60px,
-    // subHeading: 25px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // subHeading: 25px,,
   ),
   sm: (
     // heading1: 5px,
@@ -80,7 +80,8 @@ $baseFamilies: (
 $documentFamilies: (
   body: map-get($baseFamilies, "fmain"),
   heading1: map-get($baseFamilies, "fcdl"),
-  heading2: map-get($baseFamilies, "fmain"),
+  heading2: map-get($baseFamilies, "fcdl"),
+  heading3: map-get($baseFamilies, "fcdl"),
   // subHeading: "...",
 );
 /* ******************************************** */
@@ -144,6 +145,7 @@ $baseLineHeight: map-get(
     $ff: --#{$const_ffamily}-#{$key};
     font-size: var(#{$fsz});
     line-height: var(#{$lh}, 1);
+    font-family: var(#{$ff});
     * {
       font-family: var(#{$ff});
     }

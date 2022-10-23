@@ -1,61 +1,65 @@
 .header {
-	position: relative;
-	background-color: var(--bg-black);
-	z-index: 201;
-	.inner {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: var(--height-header);
-	}
-	.logo {
-		max-width: var(--header-logo-width);
-		display: block;
-		img {
-			width: 100%;
-			max-width: 100%;
-			object-fit: contain;
-		}
-	}
-	.menu {
-		& {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-		&-wrap {
-			display: flex;
-		}
-		&-link {
-			color: var(--text-white);
-			font-family: var(--ff-fcdl);
-			font-size: var(--fs-heading4);
-			padding: 15px 20px;
-			transition: all 0.4s;
-			&:hover {
-				color: var(--text-primary);
-				transition: all 0.4s;
-			}
-		}
-		@include media("<md") {
-			& {
-				display: none;
-			}
-		}
-	}
-	.hamburger {
-		// display: none;
-		outline: none;
-		border: none;
-		cursor: pointer;
-		background-color: transparent;
-		svg {
-			width: 30px;
-			height: 30px;
-		}
-		@include media(">=md") {
-			display: none;
-		}
-	}
+  position: relative;
+  background-color: var(--bg-black);
+  z-index: 201;
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--height-header);
+  }
+  .logo {
+    max-width: var(--header-logo-width);
+    display: block;
+    img {
+      width: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+  .menu {
+    & {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .menu {
+      display: flex;
+    }
+    &-wrap {
+      display: flex;
+    }
+    &-item {
+      color: var(--text-white);
+      font-family: var(--ff-fcdl);
+      font-size: var(--fs-heading4);
+      padding: 15px 20px;
+      transition: all 0.4s;
+      width: max-content;
+      &:hover {
+        color: var(--text-primary);
+        transition: all 0.4s;
+      }
+    }
+    @include media("<md") {
+      & {
+        display: none;
+      }
+    }
+  }
+  .hamburger {
+    // display: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+    @include media(">=md") {
+      display: none;
+    }
+  }
 }
